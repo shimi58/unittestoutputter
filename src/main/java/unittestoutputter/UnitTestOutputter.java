@@ -51,6 +51,11 @@ public class UnitTestOutputter implements Doclet {
         // クラスファイル要素を取得
         ClassElementAggr classElementAggr = new ClassElementAggr(docEnv);
 
+        // CSV出力用
+        final StringBuilder sb = new StringBuilder();
+
+        int totalCount = 0;
+
         for (ClassElement classElement : classElementAggr.getList()) {
 
             // Excel出力準備
@@ -81,7 +86,18 @@ public class UnitTestOutputter implements Doclet {
 
             excel.close();
 
+            // summary
+            sb.append(classElement.getPackageName(classElementAggr) + "\t"
+                    + classElement.getClassName() + "\t" + Integer.toString(excelRow) + "\r\n");
+
+            totalCount += excelRow;
+
         }
+
+        sb.append("計\t" + Integer.toString(totalCount) + "\r\n");
+
+        final String summaryTextPath = Settings.outputDirPath + "summary.txt";
+        FileUtil.savePlainText(sb.toString(), summaryTextPath);
 
         return true;
     }
