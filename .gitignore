@@ -24,3 +24,9 @@ hs_err_pid*
 
 # gradle
 /.gradle/
+<<<<<<< HEAD
+=======
+
+# Eclipse
+/.settings/
+>>>>>>> branch 'master' of https://github.com/shimi58/unittestoutputter.git
