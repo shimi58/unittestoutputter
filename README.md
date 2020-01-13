@@ -11,7 +11,7 @@ C:\TEMP
 ~~~
 
 1. TEMPフォルダ直下に以下のファイルを格納
-- UnitTestTemplate.xlsx(templeteフォルダのファイルをコピーする)
+- UnitTestTemplate.xlsx(templateフォルダのファイルをコピーする)
 - unittestoutputter.jar(moduleフォルダのファイルをコピーする)
 
 1. JavaDoc作成を行いたいプロジェクトを選択、「カスタムドックレットを使用」を選択し、以下の内容を入力する
